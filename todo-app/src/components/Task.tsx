@@ -22,7 +22,9 @@ interface TaskProps {
 const Task: React.FC<TaskProps> = ({ task, onUpdate }) => {
   const handleUpdateTask = async () => {
     await axios.put(
-      `http://127.0.0.1:8000/tasks/${task.id}?done_flag=${!task.done_flag}`,
+      `https://todo-o4dfn28zl-k0us-projects.vercel.app/tasks/${
+        task.id
+      }?done_flag=${!task.done_flag}`,
       {}
     );
     onUpdate(); // onUpdate 関数を呼ぶ

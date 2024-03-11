@@ -12,16 +12,21 @@ const TaskList: React.FC<TaskListProps> = ({ completed }) => {
   const [isAddingTask, setIsAddingTask] = useState<boolean>(false);
 
   const fetchTasks = async () => {
-    const response = await axios.get(`http://127.0.0.1:8000/tasks/`);
+    const response = await axios.get(
+      `https://todo-o4dfn28zl-k0us-projects.vercel.app/tasks/`
+    );
     setTasks(response.data);
   };
 
   const handleAddTask = async () => {
     if (newTaskTitle.trim() !== "") {
-      await axios.post(`http://127.0.0.1:8000/tasks/`, {
-        title: newTaskTitle,
-        done_flag: false,
-      });
+      await axios.post(
+        `https://todo-o4dfn28zl-k0us-projects.vercel.app/tasks/`,
+        {
+          title: newTaskTitle,
+          done_flag: false,
+        }
+      );
       setNewTaskTitle("");
       setIsAddingTask(false);
       // 新しいタスクを追加した後に再取得
