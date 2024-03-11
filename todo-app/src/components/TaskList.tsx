@@ -13,7 +13,7 @@ const TaskList: React.FC<TaskListProps> = ({ completed }) => {
 
   const fetchTasks = async () => {
     const response = await axios.get(
-      `https://todo-o4dfn28zl-k0us-projects.vercel.app/tasks/`
+      `https://todo-1adpw2hyu-k0us-projects.vercel.app/tasks/`
     );
     setTasks(response.data);
   };
@@ -21,7 +21,7 @@ const TaskList: React.FC<TaskListProps> = ({ completed }) => {
   const handleAddTask = async () => {
     if (newTaskTitle.trim() !== "") {
       await axios.post(
-        `https://todo-o4dfn28zl-k0us-projects.vercel.app/tasks/`,
+        `https://todo-1adpw2hyu-k0us-projects.vercel.app/tasks/`,
         {
           title: newTaskTitle,
           done_flag: false,
@@ -67,11 +67,6 @@ const TaskList: React.FC<TaskListProps> = ({ completed }) => {
           {tasks.length === 0 ? (
             // 画像を表示
             <div>
-              <img
-                src="./todo.png"
-                alt="No tasks"
-                style={{ width: "300px", height: "300px" }}
-              />
             </div>
           ) : (
             // タスクがある場合はタスクを表示

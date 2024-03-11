@@ -22,7 +22,7 @@ interface TaskProps {
 const Task: React.FC<TaskProps> = ({ task, onUpdate }) => {
   const handleUpdateTask = async () => {
     await axios.put(
-      `https://todo-o4dfn28zl-k0us-projects.vercel.app/tasks/${
+      `https://todo-1adpw2hyu-k0us-projects.vercel.app/tasks/${
         task.id
       }?done_flag=${!task.done_flag}`,
       {}
