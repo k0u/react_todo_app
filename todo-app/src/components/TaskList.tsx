@@ -13,7 +13,7 @@ const TaskList: React.FC<TaskListProps> = ({ completed }) => {
 
   const fetchTasks = async () => {
     const response = await axios.get(
-      `https://todo-1adpw2hyu-k0us-projects.vercel.app/tasks/`
+      `https://todo-api-gamma-eight.vercel.app/tasks/`
     );
     setTasks(response.data);
   };
@@ -21,7 +21,7 @@ const TaskList: React.FC<TaskListProps> = ({ completed }) => {
   const handleAddTask = async () => {
     if (newTaskTitle.trim() !== "") {
       await axios.post(
-        `https://todo-1adpw2hyu-k0us-projects.vercel.app/tasks/`,
+        `https://todo-api-gamma-eight.vercel.app/tasks/`,
         {
           title: newTaskTitle,
           done_flag: false,
